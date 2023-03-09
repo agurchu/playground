@@ -9,8 +9,7 @@ let alien = {
   },
 };
 
-console.log(alien);
-console.log(alien.name);
-delete alien.name; //this deletes the property name
-console.log(alien.laptop);
-console.log(alien?.laptop?.ram); // use ? when not sure of the existence of the object or property
+for (let key in alien.laptop) {
+  //reffers to the property
+  console.log(key, alien.laptop[key]);
+}
