@@ -1,14 +1,35 @@
-<button>press me</button>
+<html>
+  <head>
+    <title>My todo list</title>
+  </head>
+  <body>
+    <button>press me</button>
 
-<script>
-  let todo1 = "get groceries";
-  let todo2 = "wash car";
-  let todo3 = "make dinner";
-  let month = "november";
-  let dayOfMonth = "9,";
-  let year = 2021;
+    <script>
+      let todo1 = "get groceries";
+      let todo2 = "wash car";
+      let todo3 = "make dinner";
 
-  let result = (4 + 5) * 3;
-  let age = 23;
-  let msg = "I am " + age + "years old";
-</script>
+      //creating div with js
+      let element = document.createElement("div");
+      element.innerText = todo1; //inserts values of todo1 variable into element
+      document.body.appendChild(element); //adds variable element to our page
+
+      element = document.createElement("div");
+      element.innerText = todo2;
+      document.body.appendChild(element);
+
+      element = document.createElement("div");
+      element.innerText = todo3;
+      document.body.appendChild(element);
+
+      //_____________exercise
+      let btn = document.createElement("button");
+      btn.innerText = "Click Me";
+      document.body.appendChild(btn); ///adding a button written click me
+
+      let title = document.querySelector("title");
+      title.innerText = "Katlego's Todo List";
+    </script>
+  </body>
+</html>
