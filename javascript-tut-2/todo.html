@@ -3,20 +3,43 @@
     <title>My todo list</title>
   </head>
   <body>
-    <button>press me</button>
-
+    <input id="todo-title" type="text" placeholder="Type your todo" />
+    <button onclick="addTodo()">Add Todo</button>
+    <div id="todo-list"></div>
+    <div>
+      <button onclick="chooseFruit('Apple')">Apple</button>
+      <button onclick="chooseFruit('Tomato')">tomato</button>
+      <button onclick="chooseFruit('Eggs')">Eggs</button>
+      <button onclick="clear('')">Clear</button>
+      <div id="cart"></div>
+    </div>
     <script>
       //creating todo list with an array and function
 
-      let todos = ["get groceries", "wash car", "make dinner"];
-      todos.push("another todo");
+      const todos = ["get groceries", "wash car", "make dinner"];
 
-      //create a function for each todo in todos array
-      todos.forEach(function (todoTitle) {
-        let element = document.createElement("div");
-        element.innerText = todoTitle; //inserts values of todo1 variable into element
-        document.body.appendChild(element); //adds variable element to our page
-      });
+      render();
+
+      function addTodo() {
+        const textBox = document.getElementById("todo-title");
+        const title = textBox.value;
+        todos.push(title);
+
+        render();
+      }
+
+      function render() {
+        //create a function for each todo in todos array
+        document.getElementById("todo-list").innerHTML = "";
+
+        todos.forEach(function (todoTitle) {
+          const element = document.createElement("div");
+          element.innerText = todoTitle; //inserts values of todo1 variable into element
+          const todoList = document.getElementById("todo-list");
+          todoList.appendChild(element); //adds variable element to our page
+        });
+      }
     </script>
+    <script src="1-getting-started.js"></script>
   </body>
 </html>
