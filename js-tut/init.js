@@ -1,13 +1,3 @@
-//operators
-// const fruit = prompt("what is your fav fruit?");
-//user input
-
-// const food = Number(prompt("how much was the food"));
-// const tipPercentage = Number(prompt("tip %?") / 100);
-// const tipAmount = food * tipPercentage;
-// const total = food + tipAmount;
-// console.log(total);
-
 /**Math Operators
  * Multiply *
  * Divide /
@@ -22,14 +12,10 @@
  *Random - gives a random number btween 0 & 1 (Math.random() => 0.2255636)
  */
 
-// Baby weather app (conditionals)
-// if rain 'grab your umbrella'
-// else 'wear sunglasses'
-
-const weather = prompt("How is the weather?");
-
-if (weather == "rainy") {
-  alert("grab your umbrella");
-} else {
-  alert("wear sunglasses");
+// functions
+//it logs out your name
+function greeting(name) {
+  const greet = `Hi ${name}, nice to meet you! I'm Katlego J Mtimane.`;
 }
+const ask = "hey, what is your name?";
+greeting(ask);
