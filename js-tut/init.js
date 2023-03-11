@@ -11,11 +11,3 @@
  *ceil - round up (5.7 => 6) Math.ceil(5.7)
  *Random - gives a random number btween 0 & 1 (Math.random() => 0.2255636)
  */
-
-// functions
-//it logs out your name
-function greeting(name) {
-  const greet = `Hi ${name}, nice to meet you! I'm Katlego J Mtimane.`;
-}
-const ask = "hey, what is your name?";
-greeting(ask);
