@@ -42,10 +42,16 @@ squares.forEach((div) => {
 // greenDiv.onclick = () => console.log("you clicked green");
 
 const timesClicked = { red: 0, yellow: 0, green: 0 };
+const clearGameDiv = document.getElementById("clearDash");
+
 squares.forEach((square) => {
   square.onclick = () => {
-    timesClicked[square.value] += 1;
+    timesClicked[square.value]++;
     square.innerText = timesClicked[square.value];
-    console.log(timesClicked[square.value]);
+    // console.log(timesClicked[square.value]);
   };
 });
+
+clearGameDiv.onclick = () => {
+  squares.forEach((square) => (square.innerText = ""));
+};
