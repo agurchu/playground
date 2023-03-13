@@ -32,6 +32,7 @@ let greenDiv = document.getElementById("green");
 
 const squares = document.querySelectorAll(".color-square");
 
+//forEach
 squares.forEach((div) => {
   div.style.cursor = "pointer";
 });
@@ -40,6 +41,11 @@ squares.forEach((div) => {
 // yellowDiv.onclick = () => console.log("you clicked yellow");
 // greenDiv.onclick = () => console.log("you clicked green");
 
+const timesClicked = { red: 0, yellow: 0, green: 0 };
 squares.forEach((square) => {
-  square.onclick = () => console.log(square.value);
+  square.onclick = () => {
+    timesClicked[square.value] += 1;
+    square.innerText = timesClicked[square.value];
+    console.log(timesClicked[square.value]);
+  };
 });
