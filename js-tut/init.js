@@ -29,13 +29,17 @@ titleDev.style.background = "lightblue";
 let redDiv = document.getElementById("red");
 let yellowDiv = document.getElementById("yellow");
 let greenDiv = document.getElementById("green");
-let container = document.querySelectorAll(".container button");
+
 const squares = document.querySelectorAll(".color-square");
 
-container.forEach((div) => (div.style.cursor = "pointer"));
+squares.forEach((div) => {
+  div.style.cursor = "pointer";
+});
 
-redDiv.onclick = () => console.log("you clicked red");
-yellowDiv.onclick = () => console.log("you clicked yellow");
-greenDiv.onclick = () => console.log("you clicked green");
+// redDiv.onclick = () => console.log("you clicked red");
+// yellowDiv.onclick = () => console.log("you clicked yellow");
+// greenDiv.onclick = () => console.log("you clicked green");
 
-console.log(squares);
+squares.forEach((square) => {
+  square.onclick = () => console.log(square.value);
+});
