@@ -119,4 +119,4 @@ const wordFrequency = (phrase) => {
   return frequency;
 };
 
-console.log(wordFrequency("lol wow lol"));
+console.log(wordFrequency("lol wow lol yo yo"));
