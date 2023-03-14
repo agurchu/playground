@@ -31,9 +31,9 @@ All div ID's to access
 const billInput = document.getElementById("billTotalInput");
 const tipInput = document.getElementById("tipInput");
 const numOfPeopleDiv = document.getElementById("numberOfPeople");
-let perPersonTotal = document.getElementById("perPersonTotal");
+const perPersonTotal = document.getElementById("perPersonTotal");
 
-// get numbet of people from number of people
+// get number of people from number of people
 let numberOfPeople = Number(numOfPeopleDiv.innerText);
 
 // ** Calculate the total bill per person
@@ -55,10 +55,32 @@ const calculateBill = () => {
 
   // calculate total of per person ( total / number of perple)
   const totalPerPerson = total / numberOfPeople;
-  perPersonTotal.innerText = `R ${totalPerPerson}`;
+  perPersonTotal.innerText = `R ${totalPerPerson.toFixed(2)}`;
 };
 
-// get plus button with its id
-const plusBtn = document.getElementById("increse");
+// ** splits the bill per person
+const incresePeople = () => {
+  // increment
+  numberOfPeople++;
 
-const incresePeople = () => {};
+  numOfPeopleDiv.innerText = numberOfPeople;
+
+  calculateBill();
+};
+
+const decresePeople = () => {
+  // if (numberOfPeople > 1) {
+  //   // decrement
+  //   numberOfPeople--;
+  //   numOfPeopleDiv.innerText = numberOfPeople;
+  // }
+
+  if (numberOfPeople <= 1) {
+    alert("number of people can not be less than 1");
+    return;
+  }
+
+  numberOfPeople--;
+  numOfPeopleDiv.innerText = numberOfPeople;
+  calculateBill();
+};
