@@ -1,0 +1,22 @@
+button {
+  height: 100px;
+  width: 100px;
+}
+
+#title {
+  height: 30px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-bottom: 3rem;
+  justify-content: space-around;
+}
+
+body {
+  background: lightgray;
+}
