@@ -11,5 +11,3 @@
  *ceil - round up (5.7 => 6) Math.ceil(5.7)
  *Random - gives a random number btween 0 & 1 (Math.random() => 0.2255636)
  */
-
-/* */
