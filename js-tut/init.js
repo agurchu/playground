@@ -30,5 +30,35 @@ All div ID's to access
 
 const billInput = document.getElementById("billTotalInput");
 const tipInput = document.getElementById("tipInput");
-const numOfPeople = document.getElementById("numberOfPeople");
-const perPersonTotal = document.getElementById("perPersonTotal");
+const numOfPeopleDiv = document.getElementById("numberOfPeople");
+let perPersonTotal = document.getElementById("perPersonTotal");
+
+// get numbet of people from number of people
+let numberOfPeople = Number(numOfPeopleDiv.innerText);
+
+// ** Calculate the total bill per person
+
+const calculateBill = () => {
+  // get bill from user input & convert it into a number
+  const bill = Number(billInput.value);
+
+  // get the tip from user & convert it into a percentage
+  const tipPercentage = Number(tipInput.value) / 100;
+
+  // get the total tip amount
+
+  const tipAmount = bill * tipPercentage;
+
+  // calculate the total (tip amount + bill)
+
+  const total = tipAmount + bill;
+
+  // calculate total of per person ( total / number of perple)
+  const totalPerPerson = total / numberOfPeople;
+  perPersonTotal.innerText = `R ${totalPerPerson}`;
+};
+
+// get plus button with its id
+const plusBtn = document.getElementById("increse");
+
+const incresePeople = () => {};
