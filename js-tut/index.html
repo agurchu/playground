@@ -19,8 +19,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
+    <div class="container">
       <h1 class="banner p-3">Weather</h1>
+      <img src="weather.svg" alt="" />
       <div class="form-group">
         <input
           type="text"
@@ -39,7 +40,7 @@
           </div>
           <div class="card-body">
             <h1 class="card-title" id="weather-type">-----</h1>
-            <ul class="list mt-3 mb-4">
+            <ul class="list">
               <li>Temp: <span id="temp">---</span>&deg;</li>
               <li>Min Temp: <span id="min-temp">---</span>&deg;</li>
               <li>Max Temp: <span id="max-temp">---</span>&deg;</li>
@@ -47,7 +48,7 @@
           </div>
         </div>
       </div>
-    </main>
+    </div>
 
     <script src="init.js"></script>
   </body>
