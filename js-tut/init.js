@@ -18,30 +18,47 @@ const superHero_Token = "3472708443009585";
 const base__url = `https://superheroapi.com/api.php/${superHero_Token}`;
 const btnEl = document.getElementById("btn");
 
-const getSuperHero = (id) => {
-  const hero = document.getElementById("hero");
+const hero = document.getElementById("hero");
+const searchHeroBtn = document.getElementById("searchBtn");
+const heroInput = document.getElementById("hero-input");
 
+const getSuperHero = (id) => {
   fetch(`${base__url}/${id}`)
     .then((response) => response.json())
     .then((json) => {
       console.log(json);
-      hero.innerHTML += `<img src="${json.image.url}" style="width: 200px;"/>`;
-      const h2EL = document.createElement("h2");
-      h2EL.innerText = json.name;
-
-      hero.appendChild(h2EL);
+      const h2EL = `${json.name}`;
+      const info = `${json.work.base}`;
+      hero.innerHTML = `<img src="${json.image.url}" /> <h2>${h2EL}</h2> <p>${info}</p>`;
     });
-
-  hero.innerHTML = "";
 };
 
-const clickBtn = () => {
-  let id;
-
-  btnEl.onclick = () => {
-    id = Math.ceil(Math.random() * 731);
-    getSuperHero(id);
-  };
+const searchHero = (nam) => {
+  fetch(`${base__url}/search/${nam}`)
+    .then((response) => response.json())
+    .then((json) => {
+      const heroJson = json.results[0];
+      console.log(heroJson);
+      const h2EL = `${heroJson.name}`;
+      const info = `${heroJson.work.base}`;
+      hero.innerHTML = `<img src="${heroJson.image.url}" /><h2>${h2EL}</h2> <p>${info}</p>`;
+    });
 };
 
-clickBtn();
+// const clickBtn = () => {
+//   let id;
+
+//   btnEl.onclick = () => {
+//     id = Math.ceil(Math.random() * 731);
+//     getSuperHero(id);
+//   };
+// };
+
+// clickBtn();
+
+const randomHero = () => {
+  return Math.ceil(Math.random() * 731);
+};
+
+btnEl.onclick = () => getSuperHero(randomHero());
+searchHeroBtn.onclick = () => searchHero(heroInput.value);
