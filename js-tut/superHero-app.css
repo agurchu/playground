@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+body {
+  height: 100vh;
+  background: #d6ae9d;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 2rem;
+
+  text-align: center;
+}
+
+.container > p {
+  color: #5a4b42;
+}
+
+.container h1 {
+  color: #311f15;
+  font-weight: 600;
+}
+
+button {
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.3s;
+  background: #ff8f4e;
+}
+
+button:hover {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+.search-bar {
+  background: #311f15;
+  width: 25rem;
+  position: relative;
+  height: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: center;
+  border-radius: 1.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.1);
+}
+.search-bar input {
+  width: 100%;
+  height: 100%;
+  padding-left: 1rem;
+  background: #ffeee4;
+  box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.search-bar button {
+  width: 7rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border-radius: 1.5rem;
+}
+
+button:focus {
+  background: #c45b1e;
+  color: white;
+}
+
+.search-bar input:focus {
+  background: #ffffff;
+}
+
+#btn {
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 1.5rem;
+}
+
+#hero {
+  width: 20rem;
+  height: auto;
+  background: lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+#hero img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
