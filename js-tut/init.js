@@ -16,6 +16,7 @@
 
 const superHero_Token = "3472708443009585";
 const base__url = `https://superheroapi.com/api.php/${superHero_Token}`;
+const btnEl = document.getElementById("btn");
 
 const getSuperHero = (id) => {
   const hero = document.getElementById("hero");
@@ -30,6 +31,17 @@ const getSuperHero = (id) => {
 
       hero.appendChild(h2EL);
     });
+
+  hero.innerHTML = "";
 };
 
-getSuperHero(22);
+const clickBtn = () => {
+  let id;
+
+  btnEl.onclick = () => {
+    id = Math.ceil(Math.random() * 731);
+    getSuperHero(id);
+  };
+};
+
+clickBtn();
