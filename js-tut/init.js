@@ -35,10 +35,11 @@ feels_like
 const apiNinjas_key = "+V1mjbWMB9QlX5LMv9V/BA==RTc898ZhuOvN2tlC";
 const cityInput = document.getElementById("city-input");
 const cityName = document.getElementById("city-name");
+const countryName = document.getElementById("country-name");
 const weatherType = document.getElementById("weather-type");
 const tempEl = document.getElementById("temp");
-const minTempEl = document.getElementById("min-temp");
-const maxTempEl = document.getElementById("max-temp");
+const feelsLikeEl = document.getElementById("min-temp");
+const cloudEl = document.getElementById("max-temp");
 const url = "https://api.api-ninjas.com/v1/weather?city=";
 
 const options = {
@@ -51,20 +52,24 @@ const options = {
 const fetchWeather = async (city) => {
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=facddef3b5f7416798a110826231603&q=${city}&aqi=no `
+      `http://api.weatherapi.com/v1/current.json?key=facddef3b5f7416798a110826231603&q=${city}&aqi=yes `
     );
     const data = await response.json();
+
     weatherType.innerText = data.current.condition.text;
     cityName.innerText = city;
-    tempEl.innerText = data.current.temp_c;
+    countryName.innerText = data.location.country;
+    feelsLikeEl.innerText = data.condition.feelslike_c;
+    cloudEl.innerText = data.current.cloud;
+    tempEl.innerText = `${data.current.temp_c} C`;
     console.log(data.current.temp_c);
   } catch (error) {
-    cityName.innerText = "Not Found";
+    cityName.innerText = "something wrong happened";
+    tempEl.innerText = "---";
   }
 };
 
 const searchCity = (city) => {
   city = cityInput.value;
-
   fetchWeather(city);
 };
