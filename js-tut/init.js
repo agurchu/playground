@@ -39,28 +39,32 @@ const weatherType = document.getElementById("weather-type");
 const tempEl = document.getElementById("temp");
 const minTempEl = document.getElementById("min-temp");
 const maxTempEl = document.getElementById("max-temp");
+const url = "https://api.api-ninjas.com/v1/weather?city=";
 
 const options = {
   method: "GET",
   headers: {
     "X-Api-Key": apiNinjas_key,
   },
-  contentType: "application/json",
 };
-const fetchWeather = fetch(
-  `https://api.api-ninjas.com/v1/weather?city=${cityName}`,
-  options
-)
-  .then((response) => response.json())
-  .then((data) => console.log(data))
-  .catch((err) => console.error("Error: ", err));
 
-console.log(fetchWeather);
+const fetchWeather = async (city) => {
+  try {
+    const response = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=facddef3b5f7416798a110826231603&q=${city}&aqi=no `
+    );
+    const data = await response.json();
+    weatherType.innerText = data.current.condition.text;
+    cityName.innerText = city;
+    tempEl.innerText = data.current.temp_c;
+    console.log(data.current.temp_c);
+  } catch (error) {
+    cityName.innerText = "Not Found";
+  }
+};
 
-const searchCity = (city, temp, mintemp, maxtemp) => {
-  cityName.innerText = cityInput.value;
+const searchCity = (city) => {
   city = cityInput.value;
-  tempEl.innerText = temp;
-  minTempEl.innerText = mintemp;
-  maxTempEl.innerText = maxtemp;
+
+  fetchWeather(city);
 };
