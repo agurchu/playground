@@ -1,5 +1,6 @@
-<main>
+<div class="container">
   <h1 class="banner p-3">Weather</h1>
+  <img src="weather.svg" alt="" />
   <div class="form-group">
     <input
       type="text"
@@ -7,6 +8,7 @@
       class="form-control form-control-lg"
       id="city-input"
     />
+    <i class="bx bx-search-alt"></i>
   </div>
   <button class="btn btn-lg btn-dark" type="button" onclick="searchCity()">
     Search
@@ -14,16 +16,21 @@
   <div class="mt-3" id="weather-output">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">
-        <h4 id="city-name" class="my-0 font-weight-normal">-----</h4>
+        <h4 class="my-0 font-weight-normal">
+          City: <span id="city-name">----</span>
+        </h4>
+        <h4 class="my-0 font-weight-normal">
+          Country: <span id="country-name">----</span>
+        </h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title" id="weather-type">-----</h1>
-        <ul class="list mt-3 mb-4">
-          <li>Temp: <span id="temp">---</span>&deg;</li>
-          <li>Min Temp: <span id="min-temp">---</span>&deg;</li>
-          <li>Max Temp: <span id="max-temp">---</span>&deg;</li>
+        <h2 class="card-title" id="weather-type"></h2>
+        <ul class="list">
+          <li>Temp: <span id="temp">---</span> &deg;C</li>
+          <li>Feels like: <span id="min-temp">---</span> &deg;C</li>
+          <li>Cloud: <span id="max-temp">---</span>%</li>
         </ul>
       </div>
     </div>
   </div>
-</main>
+</div>

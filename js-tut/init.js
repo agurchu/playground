@@ -50,6 +50,7 @@ const options = {
 };
 
 const fetchWeather = async (city) => {
+  //using WeatherAPI.com
   try {
     const response = await fetch(
       `http://api.weatherapi.com/v1/current.json?key=facddef3b5f7416798a110826231603&q=${city}&aqi=yes `
