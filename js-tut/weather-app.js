@@ -18,47 +18,41 @@ feels_like
 
 
  */
-const apiNinjas_key = "+V1mjbWMB9QlX5LMv9V/BA==RTc898ZhuOvN2tlC";
-const cityInput = document.getElementById("city-input");
-const cityName = document.getElementById("city-name");
-const countryName = document.getElementById("country-name");
-const weatherType = document.getElementById("weather-type");
-const tempEl = document.getElementById("temp");
-const feelsLikeEl = document.getElementById("min-temp");
-const cloudEl = document.getElementById("max-temp");
-const url = "https://api.api-ninjas.com/v1/weather?city=";
+// const apiNinjas_key = "+V1mjbWMB9QlX5LMv9V/BA==RTc898ZhuOvN2tlC";
 
-const options = {
-  method: "GET",
-  headers: {
-    "X-Api-Key": apiNinjas_key,
-  },
-};
+// const url = "https://api.api-ninjas.com/v1/weather?city=";
+
+// const options = {
+//   method: "GET",
+//   headers: {
+//     "X-Api-Key": apiNinjas_key,
+//   },
+// };
 
 const fetchWeather = async (city) => {
+  //using WeatherAPI.com
   try {
     const response = await fetch(
       `http://api.weatherapi.com/v1/current.json?key=facddef3b5f7416798a110826231603&q=${city}&aqi=yes `
     );
     const data = await response.json();
-    tempEl.innerText = data.current.temp_c;
-    cityName.innerText = data.location.name;
-    weatherType.innerText = data.current.condition.text;
-    cloudEl.innerText = data.current.cloud;
-    feelsLikeEl.innerText = data.current.feelslike_c;
-    countryName.innerText = data.location.country;
+    document.getElementById("temp").innerText = data.current.temp_c;
+    document.getElementById("city-name").innerText = data.location.name;
+    document.getElementById("weather-type").innerText =
+      data.current.condition.text;
+    document.getElementById("cloud").innerText = data.current.cloud;
+    document.getElementById("feels-like").innerText = data.current.feelslike_c;
+    document.getElementById("country-name").innerText = data.location.country;
   } catch (error) {
-    cityName.innerText = "An error happened";
-    cityName.style.color = "red";
-    tempEl.innerText = "---";
-    feelsLikeEl.innerText = "---";
-    cloudEl.innerText = "---";
+    document.getElementById("city-name").innerText = "An error happened";
+    document.getElementById("city-name").style.color = "red";
+    document.getElementById("temp").innerText = "---";
+    document.getElementById("feels-like").innerText = "---";
+    document.getElementById("cloud").innerText = "---";
   }
 };
 
-// fetchWeather("pretoria");
-
-const searchCity = (city) => {
-  city = cityInput.value;
+const searchCity = () => {
+  const city = document.getElementById("city-input").value;
   fetchWeather(city);
 };
