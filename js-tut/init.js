@@ -19,10 +19,21 @@ class Car {
     this.name = name; // properties have "this"
     this.color = color; // properties have "this"
     this.speed = speed; // properties have "this"
+    this.currentSpeed = 0;
   }
+
+  zeroToSixty() {
+    setTimeout(() => {
+      console.log("that was fast!!");
+      this.currentSpeed = 60;
+      console.log(this.currentSpeed);
+    });
+  }
+
   //methods. anything with () Under object
   drive() {
-    console.log("drove 2 miles");
+    this.currentSpeed += 10;
+    console.log(`drove 2 miles at ${this.currentSpeed} km/h`);
   }
   //methods. anything with () Under object
   brake() {
@@ -31,6 +42,11 @@ class Car {
 }
 
 const ferrari = new Car("ferrari", "red", 250);
+console.log(ferrari.currentSpeed);
 ferrari.drive();
-console.log(ferrari.color);
+
 ferrari.brake();
+console.log(ferrari.currentSpeed);
+
+ferrari.zeroToSixty();
+ferrari.drive();
