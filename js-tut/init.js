@@ -71,7 +71,18 @@ const ferrari = new Car("ferrari", "red", 250);
 // porche , yellow, 250
 const porche = new Car("porche", "yellow", 250);
 
-const num = [1, 2, 3, 4, 5];
-console.log(porche.color);
-num.forEach((_) => ferrari.drive(50));
-porche.zeroToSixty();
+// const num = [1, 2, 3, 4, 5];
+// console.log(porche.color);
+// num.forEach((_) => ferrari.drive(50));
+// porche.zeroToSixty();
+
+// create our own push funtion
+
+Array.prototype.myPush = function (value) {
+  return (this[this.length] = value);
+};
+
+const fruits = ["frut", "ffr", 2];
+fruits.myPush(5);
+
+console.log(fruits);
