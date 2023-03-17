@@ -9,12 +9,51 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.result__container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  margin: 2rem auto;
+}
+.result__container button {
+  padding: 2rem;
+  width: 10rem;
+  border-radius: 2rem;
+  background: rgb(113, 209, 113);
+  margin: 0 auto;
+}
+
+#result {
+  border: 2px solid rgb(113, 209, 113);
+  width: 50rem;
+  height: 3rem;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
 .menu {
   display: flex;
   flex-direction: row;
   align-items: end;
   justify-content: space-around;
 }
+
+.p1__info,
+.p2__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .p1__info img {
   width: 15rem;
 }
@@ -33,6 +72,7 @@ html {
 .player__controls {
   display: flex;
   flex-direction: column;
+  margin-top: 4rem;
   font-size: 2rem;
 }
 
@@ -45,4 +85,17 @@ html {
 
 button {
   cursor: pointer;
+}
+
+.player__controls button {
+  width: 7rem;
+  padding: 0;
+  background: rgb(123, 224, 255);
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+}
+
+#p1__health,
+#p2__health {
+  font-size: 3rem;
 }
