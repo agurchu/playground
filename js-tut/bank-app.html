@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Bank Account</h1>
+  <div class="box">
+    <h2>Name: <span>Katlego Mtimane</span></h2>
+    <h2>Acc NO: <span>133 556 87</span></h2>
+    <div class="balance-view">
+      Balance: R
+      <div class="balance">
+        <h3><span id="balance-display"></span></h3>
+      </div>
+    </div>
+
+    <div class="requests">
+      <div class="requests-container">
+        <input
+          type="number"
+          min="1"
+          step="1"
+          id="withdraw-input"
+          placeholder="0.00"
+        />
+        <button id="withdraw-btn">Withdraw</button>
+      </div>
+      <div class="requests-container">
+        <input
+          type="number"
+          min="1"
+          step="1"
+          id="deposit-input"
+          placeholder="0.00"
+        />
+        <button id="deposit-btn">Deposit</button>
+      </div>
+    </div>
+  </div>
+</div>
