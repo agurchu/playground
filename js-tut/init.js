@@ -37,6 +37,7 @@ btnDiv.addEventListener("click", () => {
 document.addEventListener("keydown", (e) => {
   if (e.key == "q") {
     console.log("You pressed Q");
+    document.getElementById("punch").play();
   } else {
     console.log("Not Q");
   }
