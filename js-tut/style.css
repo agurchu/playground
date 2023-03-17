@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --primary-color: rgb(198, 224, 215);
+  --secondar-color: rgb(125, 206, 178);
+  --accent-color: rgb(0, 177, 115);
+  --dark-color: rgb(30, 44, 39);
+  --light-color: rgb(232, 255, 247);
+}
+
+body {
+  background: var(--primary-color);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 550px;
+  min-height: 400px;
+  border-radius: 1.25rem;
+  margin: 3rem;
+
+  background: var(--secondar-color);
+}
+
+.container h1 {
+  font-size: 4.5rem;
+  text-align: center;
+  font-weight: 600;
+  margin: 2rem 0;
+  color: var(--light-color);
+}
+
+.box {
+  /* background: var(--primary-color); */
+
+  height: 100%;
+  padding: 2.5rem;
+}
+
+.box h2 {
+  color: var(--light-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.box h2 span {
+  color: var(--dark-color);
+}
+
+.balance-view {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: 600;
+  align-items: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  color: var(--dark-color);
+}
+.balance {
+  border: 2px solid var(--accent-color);
+  width: 200px;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-size: 2rem;
+  display: flex;
+
+  align-items: center;
+}
+button {
+  cursor: pointer;
+}
+.requests-container {
+  margin-bottom: 2rem;
+  width: calc(100% -2rem);
+  height: 5rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 5rem;
+  display: flex;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.requests-container button {
+  padding: 0 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 5rem;
+  background: var(--accent-color);
+  color: var(--primary-color);
+  position: absolute;
+  margin: 0.2rem;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  text-transform: uppercase;
+  transition: 0.4s;
+}
+
+.requests-container button:hover,
+.requests-container button:focus {
+  background: var(--dark-color);
+}
+
+.requests-container input {
+  background: transparent;
+  padding-left: 2rem;
+  font-size: 2rem;
+  color: var(--dark-color);
+  width: 100%;
+}
+
+.requests-container input::-webkit-inner-spin-button,
+.requests-container input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}

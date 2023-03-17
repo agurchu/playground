@@ -23,9 +23,12 @@
       <h1>Bank Account</h1>
       <div class="box">
         <h2>Name: <span>Katlego Mtimane</span></h2>
-        <h2>Acc NO: <span>Katlego Mtimane</span></h2>
+        <h2>Acc NO: <span>133 556 87</span></h2>
         <div class="balance-view">
-          <h3>Balance <span id="balance-display">----</span></h3>
+          Balance:
+          <div class="balance">
+            <h3>R<span id="balance-display"></span></h3>
+          </div>
         </div>
 
         <div class="requests">
@@ -36,6 +39,7 @@
               step="1"
               max="balance"
               id="withdraw-input"
+              placeholder="0.00"
             />
             <button id="withdraw-btn">Withdraw</button>
           </div>
@@ -46,6 +50,7 @@
               step="1"
               max="balance"
               id="deposit-input"
+              placeholder="0.00"
             />
             <button id="deposit-btn">Deposit</button>
           </div>
