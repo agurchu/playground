@@ -47,6 +47,15 @@ body {
   justify-content: space-around;
 }
 
+#play {
+  padding: 1rem 2rem;
+  font-size: 2.5rem;
+  border-radius: 2rem;
+  background: rgb(113, 209, 113);
+  border: 2px solid rgb(49, 83, 49);
+  transform: translateY(-15rem);
+}
+
 .p1__info,
 .p2__info {
   display: flex;
