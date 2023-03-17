@@ -78,14 +78,14 @@ const porche = new Car("porche", "yellow", 250);
 
 // create our own push funtion
 
-Array.prototype.myPush = function (value) {
-  return (this[this.length] = value);
-};
+// Array.prototype.myPush = function (value) {
+//   return (this[this.length] = value);
+// };
 
-const fruits = ["frut", "ffr", 2];
-fruits.myPush(5);
+// const fruits = ["frut", "ffr", 2];
+// fruits.myPush(5);
 
-console.log(fruits);
+// console.log(fruits);
 
 // create bank class with withdraw(), Deposit() and properties like balance
 
@@ -98,16 +98,46 @@ class Bank {
   }
 
   withdraw(amount) {
-    return (this.balance -= amount);
+    if (this.balance - amount <= 0) {
+      return (this.balance = "Insuffient Amount");
+    } else {
+      console.log(this.balance);
+      return (this.balance -= amount);
+    }
   }
   deposit(amount) {
-    return (this.balance += amount);
+    this.balance += amount;
   }
 }
 
-const person1 = new Bank("katlego", 5000, "133 53 888", "063 734 2965");
+const person1 = new Bank("katlego", 100, "133 53 888", "063 734 2965");
 
-person1.withdraw(50);
-person1.deposit(100);
-person1.withdraw(5000);
+person1.withdraw(90);
+person1.withdraw(90);
+
 console.log(person1.balance);
+document.getElementById("balance-display").innerText = person1.balance;
+// const showBalance = (balance) => {
+
+//   );
+//   document.getElementById("withdraw-input").max = balance;
+//   console.log(person1.balance);
+// };
+
+// const getWithdraw = () => {
+//   person1.withdraw(document.getElementById("withdraw-input").value);
+
+//   document.getElementById("deposit-input").value = "";
+//   showBalance(person1.balance);
+// };
+
+// const getDeposit = () => {
+//   const btn = document.getElementById("deposit-btn");
+//   btn.addEventListener("click", (btn) => {
+//     btn = document.getElementById("deposit-input");
+//     person1.deposit(Number(btn.value));
+//   });
+
+//   showBalance(person1.balance);
+// };
+// getValues();

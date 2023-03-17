@@ -75,11 +75,13 @@ body {
 }
 .balance {
   border: 2px solid var(--accent-color);
-  width: 200px;
-  border-radius: 2rem;
-  padding: 1rem;
+  min-width: 200px;
+  height: 5rem;
+  border-radius: 5rem;
+  padding: 0 2rem;
   font-size: 2rem;
   display: flex;
+  white-space: nowrap;
 
   align-items: center;
 }
