@@ -19,6 +19,40 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="container">
+      <h1>Bank Account</h1>
+      <div class="box">
+        <h2>Name: <span>Katlego Mtimane</span></h2>
+        <h2>Acc NO: <span>Katlego Mtimane</span></h2>
+        <div class="balance-view">
+          <h3>Balance <span id="balance-display">----</span></h3>
+        </div>
+
+        <div class="requests">
+          <div class="requests-container">
+            <input
+              type="number"
+              min="1"
+              step="1"
+              max="balance"
+              id="withdraw-input"
+            />
+            <button id="withdraw-btn">Withdraw</button>
+          </div>
+          <div class="requests-container">
+            <input
+              type="number"
+              min="1"
+              step="1"
+              max="balance"
+              id="deposit-input"
+            />
+            <button id="deposit-btn">Deposit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="init.js"></script>
   </body>
 </html>
