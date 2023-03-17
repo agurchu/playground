@@ -86,3 +86,28 @@ const fruits = ["frut", "ffr", 2];
 fruits.myPush(5);
 
 console.log(fruits);
+
+// create bank class with withdraw(), Deposit() and properties like balance
+
+class Bank {
+  constructor(accHolder, balance, accNum, cellNum) {
+    (this.account_holder = accHolder),
+      (this.balance = balance),
+      (this.account_number = accNum),
+      (this.phone_number = cellNum);
+  }
+
+  withdraw(amount) {
+    return (this.balance -= amount);
+  }
+  deposit(amount) {
+    return (this.balance += amount);
+  }
+}
+
+const person1 = new Bank("katlego", 5000, "133 53 888", "063 734 2965");
+
+person1.withdraw(50);
+person1.deposit(100);
+person1.withdraw(5000);
+console.log(person1.balance);
