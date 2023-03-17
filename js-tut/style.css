@@ -1,0 +1,48 @@
+* {
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-around;
+}
+.p1__info img {
+  width: 15rem;
+}
+
+.p2__info img {
+  width: 21.5rem;
+  transform: scaleX(-1);
+}
+
+.p1__name,
+.p2__name {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.player__controls {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+.attact__div,
+.heal__div {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
