@@ -40,5 +40,6 @@ document.addEventListener("keydown", (e) => {
     document.getElementById("punch").play();
   } else {
     console.log("Not Q");
+    document.getElementById("urinal").play();
   }
 });
