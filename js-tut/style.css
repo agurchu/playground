@@ -5,6 +5,10 @@ body {
   margin: 0;
 }
 
+img {
+  width: 100px;
+}
+
 .original__movies::-webkit-scrollbar {
   display: none;
 }

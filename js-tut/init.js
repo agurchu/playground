@@ -12,13 +12,31 @@
  *Random - gives a random number btween 0 & 1 (Math.random() => 0.2255636)
  */
 
-// neyflix
+/* neyflix
 
-// window.onload = () => {
-//   getOriginals();
-//   getTrendingNow();
-//   getTopRated();
-// };
+
+- getTrendingNow()
+  * URL : 
+- getTopRated()
+  * URL : 'https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1'
+
+
+** These functions will provide the URL you need to fetch() movies of that genere **
+
+These are all the DIV ID's you're gonna need access to 👇
+========================================================
+#1 CLASS 👉 'original__movies' = Div that holds Netflix Originals
+#2 ID 👉 'trending' = Div that holds trending Movies
+#3 ID 👉 'top_rated' = Div that holds top rated Movies
+*/
+
+// Call the main functions the page is loaded
+
+window.onload = () => {
+  getOriginals();
+  getTrendingNow();
+  getTopRated();
+};
 
 const url =
   "https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1";
@@ -66,13 +84,18 @@ const showMovies = (movies, dom_element, path_type) => {
 
 fetchMovies(url, ".original__movies", "poster_path");
 // ** Function that fetches Netflix Originals **
-// function getOriginals() {
+const getOriginals = () => {
+  const url =
+    "https://api.themoviedb.org/3/discover/tv?api_key=19f84e11932abbc79e6d83f82d6d1045&with_networks=213";
 
-// }
+  fetchMovies(url, ".original__movies", "poster_path");
+};
 // // ** Function that fetches Trending Movies **
-// function getTrendingNow() {
-
-// }
+const getTrendingNow = () => {
+  const url =
+    "https://api.themoviedb.org/3/trending/movie/week?api_key=19f84e11932abbc79e6d83f82d6d1045";
+  fetchMovies(url, "#trending", "backdrop_path");
+};
 // // ** Function that fetches Top Rated Movies **
 // function getTopRated() {
 
