@@ -69,10 +69,8 @@ const showMovies = (movies, dom_element, path_type) => {
 
     const imageElement = document.createElement("img");
 
-    console.log(imageElement);
     // set attribute
     imageElement.setAttribute("data-id", movie.id);
-    console.log(movie);
 
     // set source
     imageElement.src = `https://image.tmdb.org/t/p/original${movie[path_type]}`;
@@ -109,14 +107,23 @@ const getTopRated = () => {
 
 // // ** BONUS **
 
-// // ** Fetches URL provided and returns response.json()
-// async function getMovieTrailer(id) {
-//   //URL: `https://api.themoviedb.org/3/movie/${id}/videos?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`
+// // // ** Fetches URL provided and returns response.json()
+// const getMovieTrailer = (id) => {
+//   fetch(
+//     `https://api.themoviedb.org/3/movie/${id}/videos?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`
+//   )
+//     .then((response) => {
+//       if (response.ok) {
+//         return response.json();
+//       } else {
+//         throw new Error("somthing went wrong");
+//       }
+//     })
+//     .then((data) => console.log(data));
+// };
 
-// }
-
-// // ** Function that adds movie data to the DOM
-// const setTrailer = trailers => {
+// // // ** Function that adds movie data to the DOM
+// const setTrailer = (trailers) => {
 //   // Set up iframe variable to hold id of the movieTrailer Element
 //   const iframe
 //   // Set up variable to select .movieNotFound element
