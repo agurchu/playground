@@ -18,7 +18,7 @@
 - getTrendingNow()
   * URL : 
 - getTopRated()
-  * URL : 'https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1'
+  * URL : 
 
 
 ** These functions will provide the URL you need to fetch() movies of that genere **
@@ -83,6 +83,7 @@ const showMovies = (movies, dom_element, path_type) => {
 };
 
 fetchMovies(url, ".original__movies", "poster_path");
+
 // ** Function that fetches Netflix Originals **
 const getOriginals = () => {
   const url =
@@ -90,16 +91,21 @@ const getOriginals = () => {
 
   fetchMovies(url, ".original__movies", "poster_path");
 };
+
 // // ** Function that fetches Trending Movies **
 const getTrendingNow = () => {
   const url =
     "https://api.themoviedb.org/3/trending/movie/week?api_key=19f84e11932abbc79e6d83f82d6d1045";
   fetchMovies(url, "#trending", "backdrop_path");
 };
-// // ** Function that fetches Top Rated Movies **
-// function getTopRated() {
 
-// }
+// // ** Function that fetches Top Rated Movies **
+const getTopRated = () => {
+  const url =
+    "https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1";
+
+  fetchMovies(url, "#top_rated", "backdrop_path");
+};
 
 // // ** BONUS **
 
