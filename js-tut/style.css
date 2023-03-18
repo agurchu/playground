@@ -102,9 +102,8 @@ button {
 }
 
 #result {
-  border: 2px solid rgb(113, 209, 113);
-  width: 25rem;
-  font-size: 2.5rem;
+  font-size: 5rem;
+  font-weight: 600;
   letter-spacing: 5px;
   height: 3rem;
   color: rgb(0, 172, 0);

@@ -63,19 +63,25 @@ class Player {
   strike(player, enemy, attackDmg) {
     // get a random num 1 to attackDmg be damageAmount
     const damageAmount = Math.ceil(Math.random() * attackDmg);
-
-    // substract the enemy health with damageAmount
-    enemy.health -= damageAmount;
+    if (player.health > 0 && game.isOver == false) {
+      // substract the enemy health with damageAmount
+      enemy.health -= damageAmount;
+      document.getElementById("punch").play();
+    }
 
     // update the DOM with updateGame()
-    updateGame(player, enemy, game.isOver);
+    updateGame(player1, player2, game.isOver);
     return `${player.name} attacks ${enemy.name} for ${damageAmount} damage!`;
   }
 
   heal(player) {
     //random number 0 to 5
     const hpAmount = Math.ceil(Math.random() * 5);
-    player.health += hpAmount;
+    if (player.health > 0 && player.health <= 95 && game.isOver == false) {
+      player.health += hpAmount;
+      document.getElementById("p1heal").play();
+    }
+
     // update the DOM with updateGame()
     updateGame(player1, player2, game.isOver);
     return `${player.name} heals  for ${hpAmount} HP!`;
@@ -89,7 +95,7 @@ class Game {
 
   // ** if the game is over and  a player has 0 health declare the winner
   declareWinner(isOver, p1, p2) {
-    let msg;
+    let msg = " Tie ";
 
     //if isOver is true and P1 health <=0 update P2 wins
 
@@ -101,6 +107,27 @@ class Game {
     }
     document.getElementById("urinal").play();
     return msg;
+  }
+
+  reset(p1, p2) {
+    p1.health = 100;
+    p2.health = 100;
+    this.isOver = false;
+    resultEl.innerText = "";
+    updateGame(p1, p2, this.isOver);
+  }
+
+  play(p1, p2) {
+    // reset to make sure player health is back to full
+    this.reset(p1, p2);
+
+    while (this.isOver) {
+      p1.strike(p1, p2, p1.attackDmg);
+      p2.heal(p2);
+      p2.strike(p2, p1, p2.attackDmg);
+      p1.heal(p1);
+    }
+    return this.declareWinner(this.isOver, p1, p2);
   }
 }
 
@@ -126,18 +153,17 @@ const player1 = new Player("Kat", 100, 10);
 const player2 = new Player("Ritmo", 100, 10);
 const game = new Game();
 
+playBtn.onclick = () => {
+  resultEl.innerText = game.play(player1, player2);
+};
+
 // ** player 1 controls
 
 document.addEventListener("keydown", (e) => {
-  if (e.key == "q" && player2.health > 0 && game.isOver == false) {
+  if (e.key == "q") {
     player1.strike(player1, player2, player1.attackDmg);
-    document.getElementById("punch").play();
-  } else if (
-    e.key == "a" &&
-    player1.health > 0 &&
-    player1.health <= 95 &&
-    game.isOver == false
-  ) {
+    document.getElementById("p1punch").play();
+  } else if (e.key == "a") {
     player1.heal(player1);
   }
 });
@@ -145,14 +171,10 @@ document.addEventListener("keydown", (e) => {
 // ** player 2 controls
 
 document.addEventListener("keydown", (e) => {
-  if (e.key == "p" && player1.health > 0 && game.isOver == false) {
+  if (e.key == "p") {
     player1.strike(player2, player1, player2.attackDmg);
-  } else if (
-    e.key == "l" &&
-    player2.health > 0 &&
-    player2.health <= 95 &&
-    game.isOver == false
-  ) {
+    document.getElementById("p2punch").play();
+  } else if (e.key == "l") {
     player2.heal(player2);
   }
 });
