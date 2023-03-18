@@ -16,30 +16,6 @@ body {
   width: 100%;
 }
 
-.result__container {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  justify-content: center;
-  margin: 2rem auto;
-}
-.result__container button {
-  padding: 2rem;
-  width: 10rem;
-  border-radius: 2rem;
-  background: rgb(113, 209, 113);
-  margin: 0 auto;
-}
-
-#result {
-  border: 2px solid rgb(113, 209, 113);
-  width: 50rem;
-  height: 3rem;
-  border-radius: 2rem;
-  padding: 2rem;
-  margin-bottom: 1.5rem;
-}
-
 .menu {
   display: flex;
   flex-direction: row;
@@ -107,4 +83,34 @@ button {
 #p1__health,
 #p2__health {
   font-size: 3rem;
+}
+
+.result__container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: center;
+  margin: 2rem auto;
+  gap: 1.5rem;
+}
+.result__container button {
+  padding: 2rem;
+  width: 10rem;
+  border-radius: 2rem;
+  background: rgb(113, 209, 113);
+  margin: 0 auto;
+}
+
+#result {
+  border: 2px solid rgb(113, 209, 113);
+  width: 25rem;
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  height: 3rem;
+  color: rgb(0, 172, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  padding: 2rem;
 }

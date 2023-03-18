@@ -52,7 +52,7 @@
 
         <div class="player__controls">
           <div class="attact__div">
-            <h3>Q:</h3>
+            <h3>P:</h3>
             <button
               onclick="player2.strike(player2, player1,player2.attackDmg)"
               id="attack"
@@ -62,8 +62,8 @@
           </div>
 
           <div class="heal__div">
-            <h3>A:</h3>
-            <button onclick="player1.heal(player1)" id="heal">Heal</button>
+            <h3>L:</h3>
+            <button onclick="player2.heal(player2)" id="heal">Heal</button>
           </div>
         </div>
 
@@ -79,10 +79,23 @@
   </body>
 
   <audio
-    src="sound/mixkit-body-punch-quick-hit-2153.wav"
+    src="sound/mixkit-boxer-getting-hit-2055.wav"
     style="display: none"
     type="audio/mpeg"
     id="punch"
+  ></audio>
+
+  <audio
+    src="sound/mixkit-body-punch-quick-hit-2153.wav"
+    style="display: none"
+    type="audio/mpeg"
+    id="91punch"
+  ></audio>
+  <audio
+    src="sound/mixkit-hard-and-quick-punch-2143.wav"
+    style="display: none"
+    type="audio/mpeg"
+    id="p2punch"
   ></audio>
 
   <audio
@@ -90,5 +103,18 @@
     style="display: none"
     type="audio/mpeg"
     id="urinal"
+  ></audio>
+
+  <audio
+    src="sound/mixkit-karate-fighter-hit-2154.wav"
+    style="display: none"
+    type="audio/mpeg"
+    id="p1heal"
+  ></audio>
+  <audio
+    src="sound/mixkit-punch-through-air-2141.mp3"
+    style="display: none"
+    type="audio/mpeg"
+    id="p2heal"
   ></audio>
 </html>
