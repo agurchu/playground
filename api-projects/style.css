@@ -17,15 +17,4 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(#2b2828 50%, #0066ff 50%);
-}
-
-#btn {
-  padding: 2rem 5rem;
-  font-size: 5rem;
-  border-radius: 1rem;
-  font-weight: 500;
-  background: white;
-  color: #0066ff;
-  cursor: pointer;
 }
