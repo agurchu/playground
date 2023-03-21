@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  font-family: "poppins", sans-serif;
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+button {
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #00e6ac;
+}
+
+.container {
+  width: auto;
+  background: white;
+  border-radius: 7px;
+  padding: 30px;
+}
+
+.wrapper {
+  border-radius: 15px;
+  border: 1px solid #bbb;
+}
+
+.wrapper .text__input {
+  display: flex;
+  border-bottom: 1px solid #bbb;
+}
+
+.text__input .to-text {
+  border-left: 1px solid #bbb;
+  border-radius: 0;
+}
+
+.text__input textarea {
+  height: 250px;
+  width: 100%;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  background: none;
+  resize: none;
+  padding: 1rem 1.5rem;
+}
+
+.controls,
+li,
+.icons,
+.icons i {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls {
+  padding: 1.2rem 1.5rem;
+}
+
+.controls .row.from .icons {
+  border-right: 1px solid #bbb;
+  padding-right: 15px;
+}
+.controls .row.to .icons {
+  border-left: 1px solid #bbb;
+  padding-left: 15px;
+}
+
+.controls .icons {
+  width: 38%;
+}
+
+.controls .icons i {
+  width: 50px;
+  color: #8b8b8b;
+  font-size: 1.4rem;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.controls .row select {
+  font-size: 1.8rem;
+  background: none;
+  cursor: pointer;
+}
+
+select option {
+  border-radius: 10px;
+}
+
+.controls .exchange {
+  color: #8b8b8b;
+  font-size: 1.6rem;
+  margin: 0 2rem;
+  cursor: pointer;
+}
+
+.container button {
+  width: 100%;
+  margin-top: 20px;
+  background: #00e6ac;
+  padding: 14px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1.8rem;
+}
