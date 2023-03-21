@@ -7,7 +7,7 @@ window.onload = () => {
   requestURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
 };
 
-const country = "za";
+const country = "us";
 const options = [
   "general",
   "entertainment",
@@ -57,7 +57,7 @@ const generateUI = (articles) => {
 const getNews = async () => {
   container.innerHTML = "";
   let response = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${apiKey}`
+    `https://newsapi.org/v2/top-headlines?country=${country}&general&apiKey=${apiKey}`
   );
   if (!response.ok) {
     alert("Data unavailable at the moment. Please try again later");

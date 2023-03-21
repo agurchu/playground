@@ -1,11 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+:root {
+  --color-primary: #00916c;
+  --color-secondary: #003c2d;
+
+  --color-accent: #e6003a;
+  --color-bg: #d5fff5;
+  --color-text: #b6dad1;
+}
+
 * {
   font-family: "poppins", sans-serif;
   outline: none;
   border: none;
   margin: 0;
   padding: 0;
+  text-decoration: none;
   box-sizing: border-box;
   list-style: none;
 }
@@ -21,6 +31,85 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   min-height: 100vh;
-  background: #00e6ac;
+  padding: 1rem 5rem;
+  background: var(--color-bg);
+}
+.container__heading {
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  max-width: 1124px;
+}
+
+.container {
+  display: grid;
+  gap: 2.5rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+}
+
+.news__card {
+  width: 100%;
+  display: flex;
+  height: auto;
+
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+.news__image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news__image-container {
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 2rem;
+  height: 280px;
+  overflow: hidden;
+}
+
+.news__content {
+  background: var(--color-accent);
+  padding: 1rem 2rem;
+  min-height: 45%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  border-radius: 5px;
+}
+
+.news__title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-bg);
+  margin-bottom: 1rem;
+}
+
+.news__description {
+  font-size: 1.4rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+.view__button {
+  color: var(--color-bg);
+  font-size: 1.4rem;
+  display: flex;
+  width: 10rem;
+  justify-content: center;
+  background: var(--color-secondary);
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  transition: 0.3s;
+}
+
+.view__button:hover {
+  background: var(--color-primary);
 }
