@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  width: 690px;
+  width: auto;
   background: white;
   border-radius: 7px;
   padding: 30px;
@@ -93,11 +93,17 @@ li,
 .controls .row select {
   font-size: 1.8rem;
   background: none;
+  cursor: pointer;
+}
+
+select option {
+  border-radius: 10px;
 }
 
 .controls .exchange {
   color: #8b8b8b;
   font-size: 1.6rem;
+  margin: 0 2rem;
   cursor: pointer;
 }
 
