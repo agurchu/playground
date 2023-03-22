@@ -4,7 +4,7 @@ const container = document.querySelector(".container"),
 const apiKey = "d1c724c4899f4e4fba3751776b75a8af";
 
 window.onload = () => {
-  requestURL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+  requestURL = `https://newsapi.org/v2/top-headlines?country=${country}&general=${general}&apiKey=${apiKey}`;
 };
 
 const country = "us";
@@ -56,9 +56,7 @@ const generateUI = (articles) => {
 
 const getNews = async () => {
   container.innerHTML = "";
-  let response = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=${country}&general&apiKey=${apiKey}`
-  );
+  let response = await fetch(requestURL);
   if (!response.ok) {
     alert("Data unavailable at the moment. Please try again later");
     return false;
@@ -68,5 +66,18 @@ const getNews = async () => {
   console.log(data.articles);
   generateUI(data.articles);
 };
+
+// category Selection
+const selectCategory = (e, category) => {
+  let options = document.querySelectorAll(".option");
+  options.forEach((element) => {
+    element.classList.remove("active");
+  });
+  requestURL = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}`;
+  e.target.classList.add(".active");
+  getNews();
+};
+
+// options buttons
 
 init();
