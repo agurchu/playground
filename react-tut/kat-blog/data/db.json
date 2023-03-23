@@ -23,6 +23,12 @@
       "body": "Kali Linux is a Debian-based Linux distribution that is specifically designed for digital forensics, penetration testing, and other related security tasks. It was developed by Offensive Security, a leading organization in the field of information security training and certification.\n\nKali Linux comes with a vast collection of tools that are useful for security professionals and ethical hackers. These tools include network scanners, vulnerability analysis tools, password crackers, and many others. Kali Linux is also known for its support for a wide range of hardware and architectures, making it easy to use on a variety of platforms.\n\nOne important thing to note is that while Kali Linux is a powerful tool for security professionals, it should only be used legally and ethically, and with the owner's consent. Using Kali Linux for malicious purposes is illegal and can lead to serious consequences.",
       "author": "jimmy",
       "id": 4
+    },
+    {
+      "title": " typescript and Javascript in front end development ",
+      "body": "JavaScript is a programming language that is widely used for front-end development. TypeScript, on the other hand, is a superset of JavaScript that adds additional features and functionality to the language.\n\nOne key difference between TypeScript and JavaScript is that TypeScript is statically typed, meaning that variables have a specific type that is determined at compile-time. This can help catch errors early in the development process and make code more maintainable.\n\nAnother difference is that TypeScript supports classes and interfaces, which can help make code more modular and easier to understand. TypeScript also includes features like enums and type aliases, which can help make code more expressive and readable.\n\nHowever, because TypeScript is a superset of JavaScript, it is also fully compatible with existing JavaScript code. This means that developers can gradually introduce TypeScript into their projects, without having to rewrite everything from scratch.\n\nIn summary, TypeScript provides additional features and functionality that can help make code more maintainable and easier to understand, while still remaining fully compatible with existing JavaScript code.",
+      "author": "kat",
+      "id": 5
     }
   ]
 }
