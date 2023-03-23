@@ -1,5 +1,5 @@
 // BlogList = ({ blogs, title })  blogs, title names must be the same as the variables in home.js componet
-const BlogList = ({ blogs, title, handleDelete }) => {
+const BlogList = ({ blogs, title }) => {
   //   const blogs = props.blogz;
   //   const title = props.titleAttr;
 
@@ -11,7 +11,6 @@ const BlogList = ({ blogs, title, handleDelete }) => {
           <h2>{blog.title}</h2>
           <p>Written by {blog.author}</p>
           <p>{blog.body}</p>
-          <button onClick={() => handleDelete(blog.id)}>Delete blog</button>
         </div>
       ))}
     </div>
