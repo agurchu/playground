@@ -12,15 +12,21 @@ const Home = () => {
       id: 3,
     },
   ]);
+  // this function passes id as a prop
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter((blog) => blog.id !== id);
+    setBlogs(newBlogs);
+  };
 
   return (
     <div className="home">
-      <BlogList blogs={blogs} title="All Blogs!" />
+      <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete} />
       {/**blogs variable may be any name. 
       titleAttr changes get updated to BlogList component
        */}
       <BlogList
         blogs={blogs.filter((blog) => blog.author === "Kat")}
+        handleDelete={handleDelete}
         title="Kat's blogs"
       />
     </div>
