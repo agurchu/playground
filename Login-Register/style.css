@@ -3,7 +3,7 @@
 :root {
   --color-primary: #00916c;
   --color-secondary: #003c2d;
-
+  --color-dark: #000f0b;
   --color-accent: #e6003a;
   --color-bg: #d5fff5;
   --color-text: #b6dad1;
@@ -28,7 +28,7 @@ button {
 }
 
 body {
-  background: var(--color-secondary);
+  background: var(--color-dark);
 }
 
 /*================================ header section =======================================*/
@@ -106,4 +106,70 @@ body {
 .search-bar button i {
   font-size: 22px;
   color: var(--color-bg);
+}
+
+.container {
+  width: 75%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 20px;
+  border-radius: 10px;
+  height: 550px;
+  position: absolute;
+  background: url(IMG_20221105_180349.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container .content {
+  background: transparent;
+  width: 58%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 80px;
+  color: var(--color-bg);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.content .logo {
+  font-size: 3rem;
+}
+
+.text-sci h2 {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.text-sci h2 span {
+  font-size: 2.5rem;
+}
+
+.text-sci p {
+  font-size: 1.6rem;
+  margin: 20px 0;
+}
+
+.social-icons a i {
+  font-size: 2.2rem;
+  color: var(--color-bg);
+  margin-right: 10px;
+  transition: 0.5s ease;
+}
+
+.social-icons a:hover i {
+  transform: scale(1.2);
+}
+
+.container .logreg-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  height: 100%;
+  width: calc(100% - 58%);
 }
