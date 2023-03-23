@@ -4,15 +4,25 @@ import BlogList from "./BlogList";
 const Home = () => {
   const [blogs, setBlogs] = useState(null);
   const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(true);
 
   // not store useEffect() to const cos it does not return anything but just pass as argument function
   // this fuction fires in every render
   useEffect(() => {
     setTimeout(() => {
-      fetch("http://localhost:8000/blogs")
-        .then((response) => response.json())
+      fetch("http://localhost:8000/blogss")
+        .then((response) => {
+          if (!response.ok) {
+            throw Error("could not fetch the data for that resource");
+          }
+          return response.json();
+        })
         .then((data) => {
           setBlogs(data);
+          setIsPending(false);
+        })
+        .catch((err) => {
+          setError(err.message);
           setIsPending(false);
         });
     }, 1000);
@@ -23,6 +33,8 @@ const Home = () => {
   return (
     <div className="home">
       {isPending && <div>Loading...</div>}
+      {error && <div>{error}</div>}
+
       {blogs && <BlogList blogs={blogs} title="All Blogs!" />}
       {/**blogs variable may be any name. 
       titleAttr changes get updated to BlogList component
