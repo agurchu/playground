@@ -1,0 +1,16 @@
+{
+  "blogs": [
+    {
+      "title": "My First Blog",
+      "body": "Why do we use it\nIt is a long establishment fact that a reader will be distracted.Body text is the main content of a document or webpage. It is typically the main text that a reader will focus on and is usually set in a smaller font size than the headings or titles. Body text is usually set in a serif or sans-serif font and is used to convey the main information or message of the document. It is typically set in a block paragraph format, with each paragraph separated by a line break. The purpose of body text is to provide the reader with the information they need in a clear and easy-to-read format.",
+      "author": "kat",
+      "id": 1
+    },
+    {
+      "title": "Opening Party",
+      "body": "Why do we use it\nIt is a long establishment fact that a reader will be distractedBody text is the main content of a document or webpage. It is typically the main text that a reader will focus on and is usually set in a smaller font size than the headings or titles. Body text is usually set in a serif or sans-serif font and is used to convey the main information or message of the document. It is typically set in a block paragraph format, with each paragraph separated by a line break. The purpose of body text is to provide the reader with the information they need in a clear and easy-to-read format.",
+      "author": "Jimmy",
+      "id": 2
+    }
+  ]
+}
