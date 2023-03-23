@@ -139,3 +139,32 @@ blog-details page */
 .create textarea {
   resize: vertical;
 }
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.not-found h2 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.not-found p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.not-found a {
+  color: #f1356d;
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.not-found a:hover {
+  color: #333;
+  padding-left: 2px;
+}
