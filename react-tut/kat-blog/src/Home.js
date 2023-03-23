@@ -12,6 +12,9 @@ const Home = () => {
       id: 3,
     },
   ]);
+
+  const [name, setName] = useState("kat");
+
   // this function passes id as a prop
   const handleDelete = (id) => {
     const newBlogs = blogs.filter((blog) => blog.id !== id);
@@ -22,8 +25,10 @@ const Home = () => {
   // this fuction fires in every render
   useEffect(() => {
     console.log("use effect ran");
-    console.log(blogs);
-  });
+    console.log(name);
+  }, [name]);
+  // [] dependency array makes sure useEffect() runs the function once after the initail render
+  // [name] ensures useEffect() runs the function again when name changes
 
   return (
     <div className="home">
@@ -31,6 +36,8 @@ const Home = () => {
       {/**blogs variable may be any name. 
       titleAttr changes get updated to BlogList component
        */}
+      <button onClick={() => setName("Jimmy")}>Change name</button>
+      <p>{name}</p>
       <BlogList
         blogs={blogs.filter((blog) => blog.author === "Kat")}
         handleDelete={handleDelete}
