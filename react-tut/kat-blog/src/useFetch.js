@@ -9,8 +9,9 @@ const useFetch = (url) => {
   // not store useEffect() to const cos it does not return anything but just pass as argument function
   // this fuction fires in every render
   useEffect(() => {
+    const abortCont = new AbortController();
     setTimeout(() => {
-      fetch(url)
+      fetch(url, { signal: abortCont.signal })
         .then((response) => {
           if (!response.ok) {
             throw Error("could not fetch the data for that resource");
@@ -22,10 +23,16 @@ const useFetch = (url) => {
           setIsPending(false);
         })
         .catch((err) => {
-          setError(err.message);
-          setIsPending(false);
+          if (err.name === "AbortError") {
+            console.log("fetch aborted");
+          } else {
+            setError(err.message);
+            setIsPending(false);
+          }
         });
-    }, 500);
+    }, 1000);
+
+    return () => abortCont.abort();
   }, [url]);
   // [] dependency array makes sure useEffect() runs the function once after the initail render
   // [url] ensures useEffect() runs the function again when name changes
