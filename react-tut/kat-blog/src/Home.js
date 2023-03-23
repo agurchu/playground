@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
@@ -17,6 +17,13 @@ const Home = () => {
     const newBlogs = blogs.filter((blog) => blog.id !== id);
     setBlogs(newBlogs);
   };
+
+  // not store useEffect() to const cos it does not return anything but just pass as argument function
+  // this fuction fires in every render
+  useEffect(() => {
+    console.log("use effect ran");
+    console.log(blogs);
+  });
 
   return (
     <div className="home">
