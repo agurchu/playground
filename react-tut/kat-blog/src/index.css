@@ -63,3 +63,6 @@
 .blog-preview p {
   margin-bottom: 5px;
 }
+.blog-preview a {
+  text-decoration: none;
+}
