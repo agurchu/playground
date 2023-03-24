@@ -26,6 +26,21 @@ class Counters extends Component {
     this.setState({ counters: reset });
   };
 
+  handleIncrement = (product) => {
+    // this.setState({ value: product.value++ });
+    const products = [...this.state.counters];
+    const index = products.indexOf(product);
+    products[index] = { ...product };
+    products[index].value++;
+    this.setState({ counters: products });
+  };
+  handleDecrement = (product) => {
+    if (product.value === 0) {
+      return;
+    }
+    this.setState({ value: product.value-- });
+  };
+
   render() {
     return (
       <div>
@@ -38,6 +53,8 @@ class Counters extends Component {
         {this.state.counters.map((counter) => (
           <Counter
             key={counter.id}
+            onIncrement={this.handleIncrement}
+            onDecrement={this.handleDecrement}
             onDelete={this.handleDelete}
             counter={counter}
           />
