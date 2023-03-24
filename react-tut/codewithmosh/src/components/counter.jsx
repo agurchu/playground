@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
+  // any name
   state = {
     count: 0,
   };
@@ -8,8 +9,8 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <span>{this.formatCount()}</span>
-        <button>Increament</button>
+        <span className="badge badge-primary m-2">{this.formatCount()}</span>
+        <button className="btn btn-secondary btn-sm">Increament</button>
       </div>
     ); // this is jsx expression
   }
