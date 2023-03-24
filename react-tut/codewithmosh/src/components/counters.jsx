@@ -35,10 +35,14 @@ class Counters extends Component {
     this.setState({ counters: products });
   };
   handleDecrement = (product) => {
+    const products = [...this.state.counters];
+    const index = products.indexOf(product);
     if (product.value === 0) {
       return;
     }
-    this.setState({ value: product.value-- });
+    products[index] = { ...product };
+    products[index].value--;
+    this.setState({ counters: products });
   };
 
   render() {
