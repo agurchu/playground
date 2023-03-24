@@ -7,7 +7,11 @@ class Counter extends Component {
   };
 
   handleIncrement = () => {
-    console.log("increment clicked", this);
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  handleDecrement = () => {
+    this.setState({ count: this.state.count - 1 });
   };
 
   render() {
@@ -21,6 +25,9 @@ class Counter extends Component {
           className="btn btn-secondary btn-sm"
         >
           Increament
+        </button>
+        <button onClick={this.handleDecrement} className={"m-2 btn btn-danger"}>
+          Decrement
         </button>
       </div>
     ); // this is jsx expression
