@@ -30,8 +30,14 @@ class Counter extends Component {
           Increament
         </button>
         <button
+          onClick={this.props.onDelete}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
+        </button>
+        <button
           onClick={() => this.handleDecrement("product")}
-          className={"m-2 btn btn-danger"}
+          className={"m-2 btn btn-warning btn-sm "}
         >
           Decrement
         </button>
