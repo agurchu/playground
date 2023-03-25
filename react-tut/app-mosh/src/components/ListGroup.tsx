@@ -3,9 +3,10 @@ import { useState } from "react";
 interface interProps {
   items: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 
-const ListGroup = ({ items, heading }: interProps) => {
+const ListGroup = ({ items, heading, onSelectItem }: interProps) => {
   //   let selectedIndex = 0;
 
   //Hook
@@ -19,13 +20,16 @@ const ListGroup = ({ items, heading }: interProps) => {
       <ul className="list-group">
         {items.map((item, index) => (
           <li
-            onClick={() => setSelectedIdex(index)}
-            key={item}
             className={
               selectedIndex === index
                 ? "list-group-item active"
                 : "list-group-item "
             }
+            key={item}
+            onClick={() => {
+              setSelectedIdex(index);
+              onSelectItem(item);
+            }}
           >
             {item}
           </li>

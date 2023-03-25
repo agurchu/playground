@@ -4,11 +4,25 @@ import "./App.css";
 import ListGroup from "./components/ListGroup";
 
 function App() {
-  let items = ["Polokwane", "BGF", "Joburg", "Cape Town", "Durban"];
+  let cities = ["Polokwane", "BGF", "Joburg", "Cape Town", "Durban"];
+  let countries = ["USA", "RSA", "Arg", "Bra", "Pug"];
+
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  };
 
   return (
     <div>
-      <ListGroup items={items} heading="Cities" />
+      <ListGroup
+        items={cities}
+        heading="Cities"
+        onSelectItem={handleSelectItem}
+      />
+      <ListGroup
+        items={countries}
+        heading="Countries"
+        onSelectItem={handleSelectItem}
+      />
     </div>
   );
 }
