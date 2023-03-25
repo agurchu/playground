@@ -14,6 +14,15 @@ class App extends Component {
     ],
   };
 
+  constructor(props) {
+    // calling constructor of parent constructor
+    super(props);
+    console.log("app - constructor", this.props);
+  }
+
+  componentDidMount() {
+    console.log("app-mounted");
+  }
   handleDelete = (counterId) => {
     const counters = this.state.counters.filter((c) => c.id !== counterId);
     this.setState({ counters: counters });
@@ -47,6 +56,7 @@ class App extends Component {
     this.setState({ counters: products });
   };
   render() {
+    console.log("app rendered");
     return (
       <React.Fragment>
         <NavBar
