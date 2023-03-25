@@ -55,7 +55,7 @@ class App extends Component {
         <main className="container">
           <Counters
             counters={this.state.counters}
-            onReset={this.hamdleReset}
+            onReset={this.handleReset}
             onIncrement={this.handleIncrement}
             onDecrement={this.handleDecrement}
             onDelete={this.handleDelete}
