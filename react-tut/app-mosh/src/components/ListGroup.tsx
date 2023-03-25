@@ -1,12 +1,15 @@
 const ListGroup = () => {
   return (
-    <ul className="list-group">
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">An item</li>
-      <li className="list-group-item">An item</li>
-    </ul>
+    <>
+      <h1>List</h1>
+      <ul className="list-group">
+        <li className="list-group-item">An item</li>
+        <li className="list-group-item">An item</li>
+        <li className="list-group-item">An item</li>
+        <li className="list-group-item">An item</li>
+        <li className="list-group-item">An item</li>
+      </ul>
+    </>
   );
 };
 
