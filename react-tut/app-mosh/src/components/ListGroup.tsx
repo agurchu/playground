@@ -1,13 +1,14 @@
 const ListGroup = () => {
+  const items = ["Polokwane", "BGF", "Joburg", "Cape Town", "Durban"];
   return (
     <>
       <h1>List</h1>
       <ul className="list-group">
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">An item</li>
-        <li className="list-group-item">An item</li>
+        {items.map((item) => (
+          <li key={item} className="list-group-item">
+            {item}
+          </li>
+        ))}
       </ul>
     </>
   );
