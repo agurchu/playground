@@ -1,1 +1,8 @@
+.list-group-item {
+  transition: 0.3s linear;
+}
 
+.list-group-item:hover {
+  background: rgb(10, 108, 255);
+  color: white;
+}
