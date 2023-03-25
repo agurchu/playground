@@ -1,21 +1,13 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  // any name
-  //   state = {
-  //     value: this.props.counter.value,
-  //   };
-
-  //   handleIncrement = (product) => {
-  //     console.log(product);
-  //     this.setState({ value: this.state.value + 1 });
-  //   };
-
-  //   handleDecrement = (product) => {
-  //     console.log(product);
-  //     this.setState({ value: this.state.value - 1 });
-  //   };
-
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      // Ajax call and get new data from the server
+    }
+  }
   render() {
     return (
       <div>
