@@ -1,8 +1,11 @@
 const ListGroup = () => {
-  const items = ["Polokwane", "BGF", "Joburg", "Cape Town", "Durban"];
+  let items = ["Polokwane", "BGF", "Joburg", "Cape Town", "Durban"];
+  items = [];
+
   return (
     <>
       <h1>List</h1>
+      {items.length === 0 && <p>No item found</p>}
       <ul className="list-group">
         {items.map((item) => (
           <li key={item} className="list-group-item">
