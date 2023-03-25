@@ -1,5 +1,5 @@
 import Counter from "./counter";
-import React, { Component } from "react";
+import React from "react";
 
 const Counters = (props) => {
   const { counters, onReset, onIncrement, onDecrement, onDelete } = props;
