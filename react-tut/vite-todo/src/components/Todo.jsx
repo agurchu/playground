@@ -1,11 +1,17 @@
 import React from "react";
 
-const Todo = () => {
+const Todo = ({ title }) => {
+  const handleDelete = () => {
+    console.log("clicked " + title);
+  };
+
   return (
     <div className="card">
-      <h2>Title</h2>
+      <h2>{title}</h2>
       <div className="actions">
-        <button className="btn">Delete</button>
+        <button className="btn" onClick={handleDelete}>
+          Delete
+        </button>
       </div>
     </div>
   );
