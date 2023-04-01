@@ -1,14 +1,20 @@
 import { useState } from "react";
-import Modal from "./components/Modal";
+
 import Todo from "./components/Todo";
 
 function App() {
+  const todos = [
+    { title: "Learn React", id: 1 },
+    { title: "Stories", id: 2 },
+    { title: "Master react", id: 3 },
+  ];
+
   return (
     <div className="App">
-      <Modal />
       <h1>My Todos</h1>
-      <Todo title="Learn react" />
-      <Todo title="Stories" />
+      {todos.map((todo) => (
+        <Todo key={todo.id} title={todo.title} />
+      ))}
     </div>
   );
 }

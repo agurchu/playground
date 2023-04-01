@@ -1,19 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import Backdrop from "./Backdrop";
+import Modal from "./Modal";
 
 const Todo = ({ title }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const handleDelete = () => {
-    console.log("clicked " + title);
+    setModalIsOpen(true);
   };
 
   return (
-    <div className="card">
-      <h2>{title}</h2>
-      <div className="actions">
-        <button className="btn" onClick={handleDelete}>
-          Delete
-        </button>
+    <>
+      {modalIsOpen && <Modal onClick={() => setModalIsOpen(false)} />}
+      {modalIsOpen && <Backdrop onClick={() => setModalIsOpen(false)} />}
+      <div className="card">
+        <h2>{title}</h2>
+        <div className="actions">
+          <button className="btn" onClick={handleDelete}>
+            Delete
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
