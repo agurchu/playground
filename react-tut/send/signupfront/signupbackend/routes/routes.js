@@ -1,8 +1,18 @@
 const express = require("express");
 const router = express.Router();
+const signUpTemplateCopy = require("../models/signupmodels");
 
 router.post("/signup", (req, res) => {
-  res.send("send");
+  const signedUpUser = new signUpTemplateCopy({
+    fullName: req.body.fullName,
+    userName: req.body.userName,
+    email: req.body.email,
+    password: req.body.password,
+  });
+  signedUpUser
+    .save()
+    .then((data) => res.json(data))
+    .catch((err) => res.json(err));
 });
 
 module.exports = router;
