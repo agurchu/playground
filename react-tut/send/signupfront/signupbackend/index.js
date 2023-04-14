@@ -12,4 +12,4 @@ mongoose.connect(process.env.DATABASE_ACCESS);
 app.use(express.json());
 app.use(cors());
 app.use("/api", routesUrls);
-app.listen(8000, () => console.log("server is up and running"));
+app.listen(6000, () => console.log("server is up and running"));
