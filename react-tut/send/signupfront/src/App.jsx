@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import axios from "axios";
 
 function App() {
   const [fullName, setFullName] = useState("");
@@ -7,20 +8,46 @@ function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleFullName = () => {};
-  const handleUserName = () => {};
-  const handleEmail = () => {};
-  const handlePassword = () => {};
+  const handleFullName = (event) => {
+    setFullName(event.target.value);
+  };
+  const handleUserName = (event) => {
+    setUserName(event.target.value);
+  };
+  const handleEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const registered = {
+      fullName,
+      userName,
+      email,
+      password,
+    };
+
+    axios
+      .post("http://localhost:8000/api/signup", registered)
+      .then((res) => console.log(res.data));
+
+    setFullName("");
+    setUserName("");
+    setEmail("");
+    setPassword("");
+  };
 
   return (
     <div>
-      <div className="container">
+      <div className="container mt-4">
         <div className="form-div">
-          <form>
+          <form onSubmit={onSubmit}>
             <div className="mb-3">
-              <label for="exampleInputEmail1" className="form-label">
-                Full Name
-              </label>
+              <label className="form-label">Full Name</label>
               <input
                 className="form-control form-group"
                 type="text"
@@ -31,9 +58,7 @@ function App() {
             </div>
 
             <div className="mb-3">
-              <label for="exampleInputEmail1" className="form-label">
-                Username
-              </label>
+              <label className="form-label">Username</label>
               <input
                 className="form-control form-group"
                 type="text"
@@ -44,9 +69,7 @@ function App() {
             </div>
 
             <div className="mb-3">
-              <label for="exampleInputEmail1" className="form-label">
-                Email address
-              </label>
+              <label className="form-label">Email address</label>
               <input
                 className="form-control form-group"
                 type="email"
@@ -57,9 +80,7 @@ function App() {
             </div>
 
             <div className="mb-3">
-              <label for="exampleInputEmail1" className="form-label">
-                Password
-              </label>
+              <label className="form-label">Password</label>
               <input
                 className="form-control form-group"
                 type="password"
@@ -69,13 +90,11 @@ function App() {
               />
             </div>
 
-            <button
-              type="submit"
-              className="btn btn-primary btn-block"
-              value="Submit"
-            >
-              Sign Up
-            </button>
+            <div className="d-grid">
+              <button type="submit" className="btn btn-primary " value="Submit">
+                Sign Up
+              </button>
+            </div>
           </form>
         </div>
       </div>
