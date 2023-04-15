@@ -2,17 +2,17 @@ const express = require("express");
 const router = express.Router();
 const signUpTemplateCopy = require("../models/signupmodels");
 
-router.post("/signup", (req, res) => {
+router.post("/signup", (request, response) => {
   const signedUpUser = new signUpTemplateCopy({
-    fullName: req.body.fullName,
-    userName: req.body.userName,
-    email: req.body.email,
-    password: req.body.password,
+    fullName: request.body.fullName,
+    userName: request.body.userName,
+    email: request.body.email,
+    password: request.body.password,
   });
   signedUpUser
     .save()
-    .then((data) => res.json(data))
-    .catch((err) => res.json(err));
+    .then((data) => response.json(data))
+    .catch((err) => response.json(err));
 });
 
 module.exports = router;
