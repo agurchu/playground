@@ -31,8 +31,14 @@ function App() {
   }, []);
 
   const handleDelete = async (post) => {
-    await axios.delete(apiEndpoint + "/" + post.id);
     setPosts(posts.filter((newPost) => newPost.id !== post.id));
+    try {
+      await axios.delete(apiEndpoint + "/" + post.id);
+      throw new Error("");
+    } catch (error) {
+      alert("Something failed while deleting a post");
+      setPosts(posts);
+    }
   };
 
   return (
