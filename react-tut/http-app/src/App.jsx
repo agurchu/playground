@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 
@@ -20,9 +20,16 @@ function App() {
     const newPosts = [post, ...posts];
     setPosts(newPosts);
   };
-  const handleUpdate = (post) => {
-    console.log("Upadate", post);
-  };
+
+  const handleUpdate = useCallback(async (post) => {
+    setPosts((prevPosts) => {
+      const newPosts = [...prevPosts];
+      const index = newPosts.indexOf(post);
+      newPosts[index] = { ...post, title: "Updated" };
+      return newPosts;
+    });
+  }, []);
+
   const handleDelete = (post) => {
     const newPosts = [...posts];
     setPosts(newPosts.filter((newPost) => newPost.id !== post.id));
@@ -47,7 +54,12 @@ function App() {
               <tr key={post.id}>
                 <td>{post.title}</td>
                 <td>
-                  <button className="btn btn-secondary">Update</button>
+                  <button
+                    onClick={() => handleUpdate(post)}
+                    className="btn btn-secondary"
+                  >
+                    Update
+                  </button>
                 </td>
                 <td>
                   <button
