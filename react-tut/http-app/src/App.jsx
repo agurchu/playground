@@ -36,7 +36,18 @@ function App() {
       await axios.delete(apiEndpoint + "/" + post.id);
       throw new Error("");
     } catch (error) {
-      alert("Something failed while deleting a post");
+      // Expected (404: not found, 400: bad request) - client errors
+      // - display a specific error msg
+      if (error.response && error.response.status === 404)
+        alert("This post has already been deleted");
+      else {
+        console.log("logging the error", error);
+        alert("An unexpected error occurred");
+      }
+
+      // Unexpected (network down, server down, db down, bug)
+      // - log them
+      // - display a generic and friendly error msg
       setPosts(posts);
     }
   };
