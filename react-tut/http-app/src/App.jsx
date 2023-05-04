@@ -1,10 +1,63 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import axios from "axios";
 
-import "./App.css";
+const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 
 function App() {
-  return <div className="container">hello</div>;
+  const [posts, setPosts] = useState([]);
+  console.log(posts);
+  useEffect(() => {
+    axios.get(apiEndpoint).then((response) => {
+      const { data } = response;
+      setPosts(data);
+    });
+  }, []);
+
+  const handleAdd = async () => {
+    const obj = { title: "a", body: "b" };
+    const { data: post } = await axios.post(apiEndpoint, obj);
+    const newPosts = [post, ...posts];
+    setPosts(newPosts);
+  };
+  const handleUpdate = (post) => {
+    console.log("Upadate", post);
+  };
+  const handleDelete = (post) => {
+    console.log("Delete", post);
+  };
+
+  return (
+    <div className="container my-4">
+      <button onClick={handleAdd} className="btn btn-primary">
+        Add
+      </button>
+      <table className="table">
+        <thead>
+          <tr>
+            <th className="col">Title</th>
+            <th className="col">Update</th>
+            <th className="col">Delete</th>
+          </tr>
+        </thead>
+        {posts.length > 0 && (
+          <tbody>
+            {posts.map((post) => (
+              <tr key={post.id}>
+                <td>{post.title}</td>
+                <td>
+                  <button className="btn btn-secondary">Update</button>
+                </td>
+                <td>
+                  <button className="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        )}
+      </table>
+    </div>
+  );
 }
 
 export default App;
