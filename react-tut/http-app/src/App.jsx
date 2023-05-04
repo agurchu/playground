@@ -30,9 +30,9 @@ function App() {
     });
   }, []);
 
-  const handleDelete = (post) => {
-    const newPosts = [...posts];
-    setPosts(newPosts.filter((newPost) => newPost.id !== post.id));
+  const handleDelete = async (post) => {
+    await axios.delete(apiEndpoint + "/" + post.id);
+    setPosts(posts.filter((newPost) => newPost.id !== post.id));
   };
 
   return (
