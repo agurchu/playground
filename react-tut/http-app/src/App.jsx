@@ -6,7 +6,7 @@ const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 
 function App() {
   const [posts, setPosts] = useState([]);
-  console.log(posts);
+
   useEffect(() => {
     axios.get(apiEndpoint).then((response) => {
       const { data } = response;
@@ -24,7 +24,8 @@ function App() {
     console.log("Upadate", post);
   };
   const handleDelete = (post) => {
-    console.log("Delete", post);
+    const newPosts = [...posts];
+    setPosts(newPosts.filter((newPost) => newPost.id !== post.id));
   };
 
   return (
@@ -49,7 +50,12 @@ function App() {
                   <button className="btn btn-secondary">Update</button>
                 </td>
                 <td>
-                  <button className="btn btn-danger">Delete</button>
+                  <button
+                    onClick={() => handleDelete(post)}
+                    className="btn btn-danger"
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
