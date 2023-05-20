@@ -1,15 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-
+import config from "./config.json";
 import http from "./services/httpService";
-
-const apiEndpoint = "https://jsonplaceholder.typicode.com/posts";
 
 function App() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    http.get(apiEndpoint).then((response) => {
+    http.get(config.apiEndpoint).then((response) => {
       const { data } = response;
       setPosts(data);
     });
@@ -17,7 +15,7 @@ function App() {
 
   const handleAdd = async () => {
     const obj = { title: "a", body: "b" };
-    const { data: post } = await http.post(apiEndpoint, obj);
+    const { data: post } = await http.post(config.apiEndpoint, obj);
     const newPosts = [post, ...posts];
     setPosts(newPosts);
   };
@@ -34,7 +32,7 @@ function App() {
   const handleDelete = async (post) => {
     setPosts(posts.filter((newPost) => newPost.id !== post.id));
     try {
-      await http.delete(apiEndpoint + "/" + post.id);
+      await http.delete(config.apiEndpoint + "/" + post.id);
     } catch (error) {
       // Expected (404: not found, 400: bad request) - client errors
       // - display a specific error msg
