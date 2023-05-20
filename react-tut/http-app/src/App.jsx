@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import config from "./config.json";
 import http from "./services/httpService";
 
@@ -47,6 +49,7 @@ function App() {
 
   return (
     <div className="container my-4">
+      <ToastContainer />
       <button onClick={handleAdd} className="btn btn-primary">
         Add
       </button>
